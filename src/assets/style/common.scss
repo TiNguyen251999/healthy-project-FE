@@ -1,0 +1,48 @@
+.header {
+    background-color: $DARK;
+    color: $WHITE;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 160px;
+    .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header-icon {
+        display: flex;
+        .item {
+            display: flex;
+            align-items:center;
+            margin-right: 20px;
+            h5 {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $DARK;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+        color: $WHITE;
+        text-decoration: none;
+    }
+}
+
+.btn-more {
+    display: flex !important;
+    justify-content: center !important;
+    button {
+        width: 360px;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        color: $WHITE;
+        background-image: $PRIMARY_YELLOW_GRADIENT;
+    }
+}
