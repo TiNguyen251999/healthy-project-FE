@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "@/components/chartBodyWeight";
 import Header from "@components/layout/header";
-import Footer from "@components/layout/footer";
+// import Footer from "@components/layout/footer";
 import { Row, Col, Button, Container } from "react-bootstrap";
 
 const category = [
@@ -91,6 +91,21 @@ const bodyRecord = [
   },
 ];
 
+const myExercise = [
+  {
+    id: 1,
+    title: "家事全般（立位・軽い）",
+    kcal: 26,
+    minutes: 10,
+  },
+  {
+    id: 2,
+    title: "家事全般（立位・軽い）",
+    kcal: 26,
+    minutes: 10,
+  },
+];
+
 export default function Index() {
   return (
     <>
@@ -150,7 +165,7 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <div className="body-record">
+      <div className="body-record-button">
         <Container>
           <Row>
             {bodyRecord.map((item) => (
@@ -158,9 +173,9 @@ export default function Index() {
                 <div className="box-item">
                   <div className="box-img">
                     <div className="box-img-item">
-                      <div className="cover"></div>
                       <img className="img-list-item" src={item.src} alt="" />
                     </div>
+                    <div className="cover" />
                   </div>
                   <div className="label-box">
                     <p>{item.title}</p>
@@ -172,13 +187,23 @@ export default function Index() {
           </Row>
         </Container>
       </div>
-      <div className="my-exercise">my exercise</div>
+      <div className="my-exercise mt-4">
+        <Container className="my-exercise-container">
+          <div className="calendar-title">
+            <span>
+              MY <br />
+              EXERCISE
+            </span>
+            <p>2021.05.21</p>
+          </div>
+        </Container>
+      </div>
       <div className="my-diary">my diary</div>
       <div className="text-center">
         <Button>Button2</Button>
       </div>
       <div className="recommended">recommended</div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -66,10 +66,9 @@
       }
 }
 
-.body-record {
+.body-record-button {
     .box-item {
         position: relative;
-       
         .box-img {
             padding: 30px !important;
             background: $PRIMARY_YELLOW;
@@ -81,13 +80,44 @@
                     height: 100%;
                 }
             }
-            .label-box {
+            .cover {
+                background-color: $DARK;
                 position: absolute;
-                top: 25%;
-                right: 50%;
-                text-align: center;
-                transform: translate(50%, 50%);
-              }
+                top: 30px;
+                right: 30px;
+                left: 30px;
+                bottom: 30px;
+                opacity: 0.5;
+                z-index: 1;
+            }
         }
+        .label-box {
+            position: absolute;
+            top: 25%;
+            right: 50%;
+            text-align: center;
+            transform: translate(50%, 50%);
+            z-index: 2;
+            p {
+                color: $PRIMARY_YELLOW;
+                font-weight: 400;
+                font-size: 25px;
+            }
+            div {
+                color: $WHITE;
+                background-color: $PRIMARY_ORANGE;
+                padding: 5px 10px;
+            }
+          }
       }
+}
+
+.my-exercise {
+    .my-exercise-container{
+        background-color: $DARK;
+        color: $WHITE;
+        .calendar-title {
+            display: flex;
+        }
+    }
 }
