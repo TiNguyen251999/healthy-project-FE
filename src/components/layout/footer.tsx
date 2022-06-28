@@ -32,7 +32,7 @@ function Footer() {
       <div className="container w-footer">
         <div className="row">
           {item.map((item) => (
-            <div className="col-md-4 col-xl-2 col-6">
+            <div className="col-md-4 col-xl-2 col-6" key={item.id}>
               <a href="#">{item.text}</a>
             </div>
           ))}

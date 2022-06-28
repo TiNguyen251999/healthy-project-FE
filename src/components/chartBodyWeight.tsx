@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import {
   Chart,
   ChartData,
@@ -6,38 +6,41 @@ import {
   LineElement,
   PointElement,
   LinearScale,
-  Title,
   CategoryScale,
-  BarController,
-  BarElement,
 } from "chart.js";
 
 function ChartSample() {
   const chartRef: any = useRef(null);
 
   const formData: ChartData = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: [
+      "6月",
+      "7月",
+      "8月",
+      "9月",
+      "10月",
+      "11月",
+      "12月",
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月",
+    ],
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
+        fill: false,
+        backgroundColor: "#facc20",
+        borderColor: "#facc20",
+        borderWidth: 4,
+        data: [950, 920, 700, 800, 750, 680, 760, 670, 650, 640, 620, 640],
+      },
+      {
+        fill: false,
+        backgroundColor: "#8fe9d0",
+        borderColor: "#8fe9d0",
+        borderWidth: 4,
+        data: [950, 900, 730, 710, 600, 590, 560, 550, 540, 400, 380, 360],
       },
     ],
   };
@@ -52,19 +55,27 @@ function ChartSample() {
         LineElement,
         PointElement,
         LinearScale,
-        Title,
-        CategoryScale,
-        BarController,
-        BarElement
+        CategoryScale
       );
       chartRef.current = new Chart(ctx, {
         type: "line",
         data: formData,
         options: {
-          legend: { display: false },
           scales: {
             y: {
-              beginAtZero: true,
+              grid: {
+                display: false,
+                borderColor: "white",
+                color: "white",
+              },
+              ticks: {
+                display: false,
+              },
+            },
+            x: {
+              grid: {
+                color: "white",
+              },
             },
           },
         },
@@ -72,15 +83,9 @@ function ChartSample() {
     }
   };
 
-  useEffect(() => {
-    if (chartRef.current) {
-      chartRef.current.update();
-    }
-  }, []);
-
   return (
     <Fragment>
-      <canvas ref={canvasCallback} width="400" height="400"></canvas>
+      <canvas ref={canvasCallback} className="chart p-2" />
     </Fragment>
   );
 }

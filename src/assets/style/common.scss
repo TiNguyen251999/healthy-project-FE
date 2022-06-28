@@ -1,3 +1,7 @@
+body {
+    font-family: 'Noto Sans JP' !important;
+}
+
 .header {
     background-color: $DARK;
     color: $WHITE;
@@ -5,21 +9,35 @@
     display: flex;
     justify-content: space-between;
     padding: 0 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
     .header-logo {
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
     .header-icon {
         display: flex;
+
         .item {
             display: flex;
-            align-items:center;
+            align-items: center;
             margin-right: 20px;
+
             h5 {
                 margin-left: 5px;
             }
         }
+    }
+
+    a {
+        color: $WHITE;
+        margin-left: 5px;
     }
 }
 
@@ -29,6 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     a {
         color: $WHITE;
         text-decoration: none;
@@ -38,11 +57,62 @@
 .btn-more {
     display: flex !important;
     justify-content: center !important;
+
     button {
         width: 360px;
         margin-bottom: 20px;
         padding: 10px 0;
         color: $WHITE;
         background-image: $PRIMARY_YELLOW_GRADIENT;
+    }
+}
+
+a {
+    text-decoration: none !important;
+
+    &:hover {
+        color: $PRIMARY_YELLOW  !important;
+    }
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: $LIGHT;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: $LIGHT;
+    height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $PRIMARY_YELLOW;
+}
+
+.chart {
+    background-color: $DARK_BOLD;
+}
+
+.offcanvas.offcanvas-end.show {
+    background: transparent;
+    width: 270px;
+}
+
+.offcanvas-header {
+    background: $WHITE;
+    justify-content: end;
+}
+
+.offcanvas-body {
+    .list-group {
+        .list-group-item {
+            height: 70px;
+            background-color: $GRAY;
+            color: $WHITE;
+        }
     }
 }
