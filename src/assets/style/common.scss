@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 1;
 
     .header-logo {
         display: flex;
@@ -100,6 +100,8 @@ a {
 .offcanvas.offcanvas-end.show {
     background: transparent;
     width: 270px;
+    z-index: 2;
+    border: transparent;
 }
 
 .offcanvas-header {
